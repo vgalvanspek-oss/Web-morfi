@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comercializadora y Abastecedora Morfi | Soluciones Industriales</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            500: '#334e68', // Gris azulado industrial
+                            600: '#243b53', // Azul oscuro serio
+                            700: '#102a43', // Casi negro
+                            accent: '#f59e0b', // Naranja seguridad para detalles
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados sutiles */
+        .hero-bg {
+            background-image: linear-gradient(rgba(16, 42, 67, 0.85), rgba(16, 42, 67, 0.75)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-gray-50 antialiased">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <!-- Logo / Nombre Simplificado -->
+                    <a href="#" class="flex flex-col justify-center">
+                        <span class="text-brand-700 font-extrabold text-3xl tracking-tighter">MORFI</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-600 hover:text-brand-600 font-medium transition">Inicio</a>
+                    <a href="#productos" class="text-gray-600 hover:text-brand-600 font-medium transition">Catálogo</a>
+                    <a href="#marcas" class="text-gray-600 hover:text-brand-600 font-medium transition">Marcas</a>
+                    <a href="#nosotros" class="text-gray-600 hover:text-brand-600 font-medium transition">Nosotros</a>
+                    <a href="#contacto" class="bg-brand-600 text-white px-5 py-2 rounded shadow hover:bg-brand-700 transition font-medium">
+                        Cotizar Ahora
+                    </a>
+                </div>
+
+                <!-- Mobile Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <a href="#inicio" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">Inicio</a>
+            <a href="#productos" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">Catálogo</a>
+            <a href="#marcas" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">Marcas</a>
+            <a href="#contacto" class="block py-3 px-4 text-brand-600 font-bold hover:bg-gray-50">Solicitar Cotización</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg h-screen flex items-center relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-16">
+            <div class="md:w-2/3 lg:w-1/2 text-white">
+                <!-- Nombre completo movido aquí como subtítulo destacado -->
+                <h2 class="text-brand-accent font-bold tracking-widest uppercase text-sm md:text-base mb-4">
+                    Comercializadora y Abastecedora Morfi
+                </h2>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    Potencia y Precisión para su Industria
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 font-light">
+                    Proveemos abrasivos, lubricantes y herramientas de alto rendimiento. Somos el aliado estratégico que su cadena de producción necesita.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#productos" class="bg-brand-accent text-brand-700 px-8 py-3 rounded font-bold hover:bg-yellow-400 transition text-center shadow-lg">
+                        Ver Catálogo
+                    </a>
+                    <a href="#contacto" class="border-2 border-white text-white px-8 py-3 rounded font-bold hover:bg-white hover:text-brand-700 transition text-center">
+                        Contactar Asesor
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Trust Indicators Bottom Bar -->
+        <div class="absolute bottom-0 w-full bg-brand-700/80 backdrop-blur-sm border-t border-brand-500/30 hidden md:block">
+            <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between text-gray-300 text-sm">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-truck text-brand-accent"></i> Envíos a todo México
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-certificate text-brand-accent"></i> Distribuidores Certificados
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-headset text-brand-accent"></i> Soporte Técnico Especializado
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorías de Productos -->
+    <section id="productos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-700 mb-4">Nuestras Soluciones</h2>
+                <div class="h-1 w-20 bg-brand-accent mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Contamos con un inventario robusto enfocado en la durabilidad y eficiencia de sus procesos operativos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Abrasivos -->
+                <div class="group card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1531685250784-75699ddc9f0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Abrasivos Industriales" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-brand-700/30 group-hover:bg-brand-700/10 transition"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-4 text-brand-600">
+                            <i class="fas fa-compact-disc text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-700 mb-2">Abrasivos</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Discos de corte, desbaste, lijas y ruedas flap para acabados perfectos en metal y acero.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-4">
+                            <li><i class="fas fa-check text-brand-accent mr-2"></i>Discos de Corte</li>
+                            <li><i class="fas fa-check text-brand-accent mr-2"></i>Ruedas Flap</li>
+                            <li><i class="fas fa-check text-brand-accent mr-2"></i>Lijas Industriales</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Lubricantes -->
+                <div class="group card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lubricantes Industriales" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-brand-700/30 group-hover:bg-brand-700/10 transition"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-4 text-brand-600">
+                            <i class="fas fa-oil-can text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-700 mb-2">Lubricantes y Químicos</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Aceites hidráulicos, grasas de alta temperatura y desengrasantes para mantenimiento.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-4">
+                            <li><i class="fas fa-check text-brand-accent mr-2"></i>Aceites Hidráulicos</li>
+                            <li><i class="fas fa-check text-brand-accent mr-2"></i>Grasas de Litio</li>
+                            <li><i class="fas fa-check text-brand-accent mr-2"></i>Anticorrosivos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Herramientas y EPP -->
+                <div class="group card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Herramientas y Seguridad" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-brand-700/30 group-hover:bg-brand-700/10 transition"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-4 text-brand-600">
+                            <i class="fas fa-tools text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-700 mb-2">Herramientas y EPP</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Herramienta manual, eléctrica y equipo de protección personal para seguridad industrial.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-4">
+                            <li><i class="fas fa-check text-brand-accent mr-2"></i>Guantes y Lentes</li>
+                            <li><i class="fas fa-check text-brand-accent mr-2"></i>Herramienta de Poder</li>
+                            <li><i class="fas fa-check text-brand-accent mr-2"></i>Calzado Industrial</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contacto" class="text-brand-600 font-semibold hover:text-brand-700 transition flex items-center justify-center gap-2">
+                    Ver catálogo completo <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marcas Section -->
+    <section id="marcas" class="py-16 bg-gray-50 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-center text-gray-500 font-semibold uppercase tracking-widest mb-10">Trabajamos con las mejores marcas del sector</h3>
+            
+            <!-- Grid de Logos (Simulados con texto para evitar copyright, reemplazar con logos reales) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition duration-500">
+                <div class="flex justify-center items-center h-16 bg-white rounded shadow-sm p-4 font-bold text-xl text-gray-400">3M</div>
+                <div class="flex justify-center items-center h-16 bg-white rounded shadow-sm p-4 font-bold text-xl text-gray-400">LOCTITE</div>
+                <div class="flex justify-center items-center h-16 bg-white rounded shadow-sm p-4 font-bold text-xl text-gray-400">NORTON</div>
+                <div class="flex justify-center items-center h-16 bg-white rounded shadow-sm p-4 font-bold text-xl text-gray-400">BOSCH</div>
+                <div class="flex justify-center items-center h-16 bg-white rounded shadow-sm p-4 font-bold text-xl text-gray-400">DEWALT</div>
+                <div class="flex justify-center items-center h-16 bg-white rounded shadow-sm p-4 font-bold text-xl text-gray-400">SKF</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros / Valor Agregado -->
+    <section id="nosotros" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1565514020176-db7020fb864b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Almacén Industrial" class="rounded-lg shadow-2xl">
+                    <div class="bg-brand-700 text-white p-6 rounded-lg shadow-xl -mt-12 ml-12 relative z-10 max-w-sm hidden md:block">
+                        <p class="font-light italic">"La calidad no es un acto, es un hábito. En Morfi, aseguramos que su producción nunca se detenga."</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-brand-700 mb-6">Por qué elegir a Comercializadora Morfi</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Entendemos que en la industria, el tiempo es dinero. Por eso, nos hemos especializado no solo en vender productos, sino en ofrecer soluciones de abastecimiento integrales.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center text-brand-600">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-700">Respuesta Inmediata</h4>
+                                <p class="text-sm text-gray-500">Cotizaciones en menos de 24 horas y logística optimizada.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center text-brand-600">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-700">Garantía de Origen</h4>
+                                <p class="text-sm text-gray-500">Todos nuestros productos son originales y cuentan con respaldo de fábrica.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center text-brand-600">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-700">Precios Competitivos</h4>
+                                <p class="text-sm text-gray-500">Negociaciones directas por volumen para optimizar su presupuesto.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-brand-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
+                
+                <!-- Info de contacto -->
+                <div class="bg-brand-700 text-white lg:w-2/5 p-10 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Hablemos de negocios</h3>
+                        <p class="text-brand-100 mb-10">Solicite una cotización o asesoría técnica. Estamos listos para atenderle.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-phone-alt text-brand-accent text-xl w-6"></i>
+                                <span>+52 (55) 1234-5678</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-envelope text-brand-accent text-xl w-6"></i>
+                                <span>ventas@morfi.com.mx</span>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-map-marker-alt text-brand-accent text-xl w-6 mt-1"></i>
+                                <span>Parque Industrial Norte, Nave 3,<br>Ciudad de México, CP 00000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 lg:mt-0">
+                        <p class="text-sm text-brand-100 opacity-60">Horario de atención:<br>Lun - Vie: 8:00am - 6:00pm</p>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="lg:w-3/5 p-10">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Envíenos un mensaje</h3>
+                    <form onsubmit="event.preventDefault(); alert('Gracias por contactar a Comercializadora Morfi. Un asesor se pondrá en contacto pronto.');" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
+                                <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="Su nombre">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Empresa</label>
+                                <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="Nombre de la empresa">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Correo Electrónico</label>
+                            <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="ejemplo@empresa.com">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Interés</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                                <option>Cotización General</option>
+                                <option>Abrasivos</option>
+                                <option>Lubricantes</option>
+                                <option>Herramientas</option>
+                                <option>Asesoría Técnica</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
+                            <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="Describa sus necesidades..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-600 text-white font-bold py-3 rounded shadow hover:bg-brand-700 transition">
+                            Enviar Solicitud
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-700 text-white py-12 border-t border-brand-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h2 class="text-xl font-bold mb-4">COMERCIALIZADORA Y<br>ABASTECEDORA MORFI</h2>
+                    <p class="text-brand-100 text-sm max-w-sm mb-6">
+                        Comprometidos con el suministro industrial de alta calidad. Ayudamos a su empresa a mantener la continuidad operativa con los mejores productos del mercado.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-brand-accent transition"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-white hover:text-brand-accent transition"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-white hover:text-brand-accent transition"><i class="fab fa-whatsapp text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-brand-accent">Navegación</h3>
+                    <ul class="space-y-2 text-sm text-brand-100">
+                        <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
+                        <li><a href="#productos" class="hover:text-white transition">Catálogo</a></li>
+                        <li><a href="#nosotros" class="hover:text-white transition">Nosotros</a></li>
+                        <li><a href="#contacto" class="hover:text-white transition">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-brand-accent">Legales</h3>
+                    <ul class="space-y-2 text-sm text-brand-100">
+                        <li><a href="#" class="hover:text-white transition">Aviso de Privacidad</a></li>
+                        <li><a href="#" class="hover:text-white transition">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-brand-600 mt-12 pt-8 text-center text-sm text-brand-100">
+                <p>&copy; 2023 Comercializadora y Abastecedora Morfi. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script simple para menú móvil -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer click en un link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
