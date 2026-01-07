@@ -38,7 +38,7 @@
     <style>
         /* Estilos personalizados sutiles */
         .hero-bg {
-            background-image: linear-gradient(rgba(16, 42, 67, 0.85), rgba(16, 42, 67, 0.75)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(16, 42, 67, 0.85), rgba(16, 42, 67, 0.75)), url('portada.png');
             background-size: cover;
             background-position: center;
         }
@@ -48,6 +48,13 @@
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-scroll {
+            animation: scroll 40s linear infinite;
         }
     </style>
 </head>
@@ -149,7 +156,7 @@
                 <!-- Abrasivos -->
                 <div class="group card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
                     <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1531685250784-75699ddc9f0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Abrasivos Industriales" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <img src="abrasivos.png" alt="Abrasivos Industriales" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-brand-700/30 group-hover:bg-brand-700/10 transition"></div>
                     </div>
                     <div class="p-8">
@@ -169,7 +176,7 @@
                 <!-- Lubricantes -->
                 <div class="group card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
                     <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lubricantes Industriales" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <img src="lubricantes.png" alt="Lubricantes Industriales" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-brand-700/30 group-hover:bg-brand-700/10 transition"></div>
                     </div>
                     <div class="p-8">
@@ -189,7 +196,7 @@
                 <!-- Herramientas y EPP -->
                 <div class="group card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
                     <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Herramientas y Seguridad" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <img src="herramientas.png" alt="Herramientas y Seguridad" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-brand-700/30 group-hover:bg-brand-700/10 transition"></div>
                     </div>
                     <div class="p-8">
@@ -218,16 +225,27 @@
     <!-- Marcas Section -->
     <section id="marcas" class="py-16 bg-gray-50 border-y border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-center text-gray-500 font-semibold uppercase tracking-widest mb-10">Trabajamos con las mejores marcas del sector</h3>
+            <h3 class="text-center text-gray-500 font-semibold uppercase tracking-widest mb-12">Trabajamos con las mejores marcas del sector</h3>
             
-            <!-- Grid de Logos (Simulados con texto para evitar copyright, reemplazar con logos reales) -->
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition duration-500">
-                <div class="flex justify-center items-center h-16 bg-white rounded shadow-sm p-4 font-bold text-xl text-gray-400">3M</div>
-                <div class="flex justify-center items-center h-16 bg-white rounded shadow-sm p-4 font-bold text-xl text-gray-400">LOCTITE</div>
-                <div class="flex justify-center items-center h-16 bg-white rounded shadow-sm p-4 font-bold text-xl text-gray-400">NORTON</div>
-                <div class="flex justify-center items-center h-16 bg-white rounded shadow-sm p-4 font-bold text-xl text-gray-400">BOSCH</div>
-                <div class="flex justify-center items-center h-16 bg-white rounded shadow-sm p-4 font-bold text-xl text-gray-400">DEWALT</div>
-                <div class="flex justify-center items-center h-16 bg-white rounded shadow-sm p-4 font-bold text-xl text-gray-400">SKF</div>
+            <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+                <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 animate-scroll">
+                    <li class="flex justify-center items-center h-16 w-40 p-4"><span class="font-bold text-2xl text-gray-400">3M</span></li>
+                    <li class="flex justify-center items-center h-16 w-40 p-4"><span class="font-bold text-2xl text-gray-400">LOCTITE</span></li>
+                    <li class="flex justify-center items-center h-16 w-40 p-4"><span class="font-bold text-2xl text-gray-400">NORTON</span></li>
+                    <li class="flex justify-center items-center h-16 w-40 p-4"><span class="font-bold text-2xl text-gray-400">BOSCH</span></li>
+                    <li class="flex justify-center items-center h-16 w-40 p-4"><span class="font-bold text-2xl text-gray-400">DEWALT</span></li>
+                    <li class="flex justify-center items-center h-16 w-40 p-4"><span class="font-bold text-2xl text-gray-400">SKF</span></li>
+                    <li class="flex justify-center items-center h-16 w-40 p-4"><span class="font-bold text-2xl text-gray-400">AUSTROMEX</span></li>
+                </ul>
+                <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 animate-scroll" aria-hidden="true">
+                    <li class="flex justify-center items-center h-16 w-40 p-4"><span class="font-bold text-2xl text-gray-400">3M</span></li>
+                    <li class="flex justify-center items-center h-16 w-40 p-4"><span class="font-bold text-2xl text-gray-400">LOCTITE</span></li>
+                    <li class="flex justify-center items-center h-16 w-40 p-4"><span class="font-bold text-2xl text-gray-400">NORTON</span></li>
+                    <li class="flex justify-center items-center h-16 w-40 p-4"><span class="font-bold text-2xl text-gray-400">BOSCH</span></li>
+                    <li class="flex justify-center items-center h-16 w-40 p-4"><span class="font-bold text-2xl text-gray-400">DEWALT</span></li>
+                    <li class="flex justify-center items-center h-16 w-40 p-4"><span class="font-bold text-2xl text-gray-400">SKF</span></li>
+                    <li class="flex justify-center items-center h-16 w-40 p-4"><span class="font-bold text-2xl text-gray-400">AUSTROMEX</span></li>
+                </ul>
             </div>
         </div>
     </section>
@@ -236,14 +254,14 @@
     <section id="nosotros" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-center gap-16">
+                                <div class="lg:w-1/2">
+                                    <img src="almacen.png" alt="Almacén Industrial" class="">
+                                    <div class="bg-brand-700 text-white p-6 rounded-lg shadow-xl -mt-12 ml-12 relative z-10 max-w-sm hidden md:block">
+                                        <p class="font-light italic">"La calidad no es un acto, es un hábito. En Morfi, aseguramos que su producción nunca se detenga."</p>
+                                    </div>
+                                </div>
                 <div class="lg:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1565514020176-db7020fb864b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Almacén Industrial" class="rounded-lg shadow-2xl">
-                    <div class="bg-brand-700 text-white p-6 rounded-lg shadow-xl -mt-12 ml-12 relative z-10 max-w-sm hidden md:block">
-                        <p class="font-light italic">"La calidad no es un acto, es un hábito. En Morfi, aseguramos que su producción nunca se detenga."</p>
-                    </div>
-                </div>
-                <div class="lg:w-1/2">
-                    <h2 class="text-3xl font-bold text-brand-700 mb-6">Por qué elegir a Comercializadora Morfi</h2>
+                    <h2 class="text-3xl font-bold text-brand-700 mb-6">Por qué Elegirnos</h2>
                     <p class="text-gray-600 mb-6 leading-relaxed">
                         Entendemos que en la industria, el tiempo es dinero. Por eso, nos hemos especializado no solo en vender productos, sino en ofrecer soluciones de abastecimiento integrales.
                     </p>
@@ -282,8 +300,60 @@
         </div>
     </section>
 
+    <!-- Asesoría Técnica -->
+    <section id="asesoria" class="py-20 bg-brand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
+                <div class="lg:w-1/2">
+                    <img src="asesoria.png" alt="Asesoría Técnica" class="rounded-lg shadow-xl">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-brand-700 mb-6">Asesoría Técnica Especializada</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        No solo vendemos productos, ofrecemos soluciones. Nuestro equipo de expertos está capacitado para analizar sus procesos y recomendar los materiales y herramientas que maximicen su eficiencia y reduzcan costos.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-600 shadow-sm">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-700">Optimización de Procesos</h4>
+                                <p class="text-sm text-gray-500">Analizamos su línea de producción para identificar áreas de mejora.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-600 shadow-sm">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-700">Selección de Material Adecuado</h4>
+                                <p class="text-sm text-gray-500">Le ayudamos a elegir el abrasivo o lubricante perfecto para su aplicación.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-600 shadow-sm">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-700">Reducción de Costos</h4>
+                                <p class="text-sm text-gray-500">Una correcta selección de insumos se traduce en ahorros y mayor vida útil de su maquinaria.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="mt-8">
+                        <a href="#contacto" class="bg-brand-accent text-brand-700 px-8 py-3 rounded font-bold hover:bg-yellow-400 transition text-center shadow-lg">
+                            Consultar con un Experto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contacto -->
-    <section id="contacto" class="py-20 bg-brand-50 relative">
+    <section id="contacto" class="py-20 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
                 
@@ -294,18 +364,12 @@
                         <p class="text-brand-100 mb-10">Solicite una cotización o asesoría técnica. Estamos listos para atenderle.</p>
                         
                         <div class="space-y-6">
-                            <div class="flex items-center gap-4">
-                                <i class="fas fa-phone-alt text-brand-accent text-xl w-6"></i>
-                                <span>+52 (55) 1234-5678</span>
-                            </div>
+
                             <div class="flex items-center gap-4">
                                 <i class="fas fa-envelope text-brand-accent text-xl w-6"></i>
                                 <span>ventas@morfi.com.mx</span>
                             </div>
-                            <div class="flex items-start gap-4">
-                                <i class="fas fa-map-marker-alt text-brand-accent text-xl w-6 mt-1"></i>
-                                <span>Parque Industrial Norte, Nave 3,<br>Ciudad de México, CP 00000</span>
-                            </div>
+
                         </div>
                     </div>
                     
@@ -368,11 +432,7 @@
                     <p class="text-brand-100 text-sm max-w-sm mb-6">
                         Comprometidos con el suministro industrial de alta calidad. Ayudamos a su empresa a mantener la continuidad operativa con los mejores productos del mercado.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-white hover:text-brand-accent transition"><i class="fab fa-linkedin text-xl"></i></a>
-                        <a href="#" class="text-white hover:text-brand-accent transition"><i class="fab fa-facebook text-xl"></i></a>
-                        <a href="#" class="text-white hover:text-brand-accent transition"><i class="fab fa-whatsapp text-xl"></i></a>
-                    </div>
+
                 </div>
                 
                 <div>
@@ -388,14 +448,14 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4 text-brand-accent">Legales</h3>
                     <ul class="space-y-2 text-sm text-brand-100">
-                        <li><a href="#" class="hover:text-white transition">Aviso de Privacidad</a></li>
-                        <li><a href="#" class="hover:text-white transition">Términos y Condiciones</a></li>
+                        <li><a href="aviso-de-privacidad.html" class="hover:text-white transition">Aviso de Privacidad</a></li>
+                        <li><a href="terminos-y-condiciones.html" class="hover:text-white transition">Términos y Condiciones</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="border-t border-brand-600 mt-12 pt-8 text-center text-sm text-brand-100">
-                <p>&copy; 2023 Comercializadora y Abastecedora Morfi. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Comercializadora y Abastecedora Morfi. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
