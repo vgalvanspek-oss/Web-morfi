@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
     <title>Comercializadora y Abastecedora Morfi | Soluciones Industriales</title>
     
     <!-- Tailwind CSS -->
@@ -367,7 +368,7 @@
 
                             <div class="flex items-center gap-4">
                                 <i class="fas fa-envelope text-brand-accent text-xl w-6"></i>
-                                <span>ventas@morfi.com.mx</span>
+                                <span>ventas@morfimx.com</span>
                             </div>
 
                         </div>
@@ -381,26 +382,26 @@
                 <!-- Formulario -->
                 <div class="lg:w-3/5 p-10">
                     <h3 class="text-xl font-bold text-gray-800 mb-6">Envíenos un mensaje</h3>
-                    <form onsubmit="event.preventDefault(); alert('Gracias por contactar a Comercializadora Morfi. Un asesor se pondrá en contacto pronto.');" class="space-y-6">
+                    <form id="contact-form" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
-                                <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="Su nombre">
+                                <label for="form-name" class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
+                                <input type="text" id="form-name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="Su nombre">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Empresa</label>
-                                <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="Nombre de la empresa">
+                                <label for="form-company" class="block text-sm font-medium text-gray-700 mb-2">Empresa</label>
+                                <input type="text" id="form-company" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="Nombre de la empresa">
                             </div>
                         </div>
                         
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Correo Electrónico</label>
-                            <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="ejemplo@empresa.com">
+                            <label for="form-email" class="block text-sm font-medium text-gray-700 mb-2">Correo Electrónico</label>
+                            <input type="email" id="form-email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="ejemplo@empresa.com">
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Interés</label>
-                            <select class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                            <label for="form-interest" class="block text-sm font-medium text-gray-700 mb-2">Interés</label>
+                            <select id="form-interest" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
                                 <option>Cotización General</option>
                                 <option>Abrasivos</option>
                                 <option>Lubricantes</option>
@@ -410,13 +411,14 @@
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
-                            <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="Describa sus necesidades..."></textarea>
+                            <label for="form-message" class="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
+                            <textarea id="form-message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="Describa sus necesidades..."></textarea>
                         </div>
 
-                        <button type="submit" class="w-full bg-brand-600 text-white font-bold py-3 rounded shadow hover:bg-brand-700 transition">
+                        <button id="form-submit-btn" type="submit" class="w-full bg-brand-600 text-white font-bold py-3 rounded shadow hover:bg-brand-700 transition flex items-center justify-center">
                             Enviar Solicitud
                         </button>
+                        <p id="form-status" class="text-center text-sm"></p>
                     </form>
                 </div>
             </div>
@@ -474,6 +476,60 @@
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
             });
+        });
+    </script>
+
+    <!-- Script para el formulario de contacto -->
+    <script>
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('form-submit-btn');
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Enviando...';
+            formStatus.textContent = '';
+            formStatus.classList.remove('text-red-500', 'text-green-500');
+
+            const formData = {
+                name: document.getElementById('form-name').value,
+                company: document.getElementById('form-company').value,
+                email: document.getElementById('form-email').value,
+                interest: document.getElementById('form-interest').value,
+                message: document.getElementById('form-message').value,
+            };
+
+            try {
+                // Reemplaza 'morfi-web' con tu ID de proyecto si es diferente.
+                // La URL sigue el patrón: https://<region>-<project-id>.cloudfunctions.net/<functionName>
+                const functionUrl = 'https://us-central1-morfi-web.cloudfunctions.net/sendContactEmail';
+                
+                const response = await fetch(functionUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (response.ok) {
+                    formStatus.textContent = '¡Mensaje enviado con éxito!';
+                    formStatus.classList.add('text-green-500');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Hubo un problema al enviar el formulario.');
+                }
+
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                formStatus.textContent = 'Error al enviar. Intente más tarde.';
+                formStatus.classList.add('text-red-500');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Enviar Solicitud';
+            }
         });
     </script>
 </body>
